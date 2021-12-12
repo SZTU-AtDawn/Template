@@ -6,7 +6,6 @@
 
 // 无优化版本的getNext
 // 注：getNext函数是用来处理**模式串**的
-// 注：诸如求循环长度的问题**仅能使用该版本**
 void getNext() {
     next[0] = -1;
     for (int i = 0, j = -1; i < M;)
@@ -19,6 +18,7 @@ void getNext() {
 }
 
 // 优化版getNext
+// 注：优化版的getNext仅能用来解决**字符串匹配**问题，其他的诸如循环节等问题就不行了
 void getNextOptimized() {
     next[0] = -1;
     for (int i = 0, j = -1; i < M;)
