@@ -12,6 +12,7 @@ void getNext() {
         if(j == -1 || b[i] == b[j]) {
             ++i;
             ++j;
+            next[i] = j;
         }
         else 
             j = next[j];
