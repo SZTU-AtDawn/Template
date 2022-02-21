@@ -13,6 +13,7 @@
 |文件名|中文名称|
 |:----|:----|
 |[ST.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/ST.cpp)|ST表|
+|[Union_Find.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Union_Find.cpp)|并查集、带权并查集|
 ### 杂项（Misc）
 |文件名|中文名称|
 |:----|:----|
