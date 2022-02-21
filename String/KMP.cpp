@@ -1,8 +1,8 @@
 // const char* a[] -> 匹配串
 // const char* b[] -> 模式串
 // int next[] -> Next数组
-// N -> 匹配串长度
-// M -> 模式串长度
+// int N -> 匹配串长度
+// int M -> 模式串长度
 
 // 无优化版本的getNext
 // 注：getNext函数是用来处理**模式串**的
