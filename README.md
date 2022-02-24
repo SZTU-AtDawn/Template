@@ -12,6 +12,7 @@
 ### 数据结构（Data structure）
 |文件名|中文名称|
 |:----|:----|
+|[Link_Cut_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Link_Cut_Tree.cpp)|树链剖分|
 |[ST.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/ST.cpp)|ST表|
 |[Union_Find.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Union_Find.cpp)|并查集、带权并查集|
 ### 杂项（Misc）
