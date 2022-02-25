@@ -14,7 +14,7 @@ struct UnionFind {
         for (int i = 1; i <= N; ++i)
             fa[i] = i;
     }
-    // 查找父亲 O(log*n)
+    // 查找父亲 O(log*(N))
     int find(int x) {
         return fa[x] == x ? x : (fa[x] = find(fa[x]));
     }
@@ -48,7 +48,7 @@ struct WeightedUnionFind {
             siz[i] = 1;
         }
     }
-    // 查找父亲 O(log*n)
+    // 查找父亲 O(log*(N))
     int find(int x) {
         if (fa[x] == x)
             return x;
