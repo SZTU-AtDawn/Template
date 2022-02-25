@@ -12,6 +12,7 @@
 ### 数据结构（Data structure）
 |文件名|中文名称|
 |:----|:----|
+|[Binary_Index_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Binary_Index_Tree.cpp)|树状数组|
 |[ST.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/ST.cpp)|ST表|
 |[Segment_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Segment_Tree.cpp)|普通线段树|
 |[Union_Find.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Union_Find.cpp)|普通并查集|
