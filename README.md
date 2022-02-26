@@ -2,7 +2,7 @@
 ## 规则
 1. 请尽量使用**标准**名称命名，首字母大写，用下划线代替空格，写算法全名，如：`Aho_Corasick_Automaton.cpp`、`Segment_Tree.cpp`、`Red_Black_Tree.cpp`
 2. 除非是该模板的缩写名称更加常用/更加简明扼要，可以使用缩写，如：`KMP.cpp`、`FFT.cpp`、`SAM.cpp`
-3. 如果是数据结构，则打包成struct，如果是算法，则打包成函数；两者都单独放在.cpp文件中，不需要添加相关上下文代码
+3. 如果是数据结构，则打包成结构体，如果是算法，则打包成函数或结构体（模块化）；两者都单独放在.cpp文件中，不需要添加相关上下文代码
 4. **必须对引用的外部变量进行说明**，如：`// N为数组长度`
 5. 尽可能在关键位置添加注释来解释模板的核心代码
 6. 如果新增了模板分类，请创建子文件夹，如：`Graph`、`Math`、`Geometry`
@@ -21,6 +21,7 @@
 |文件名|中文名称|
 |:----|:----|
 |[Fast_Read.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Misc/Fast_Read.cpp)|快读|
+|[Discrete.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Misc/Discrete.cpp)|离散化|
 ### 字符串（String）
 |文件名|中文名称|
 |:----|:----|
