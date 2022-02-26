@@ -20,8 +20,8 @@
 ### 杂项（Misc）
 |文件名|中文名称|
 |:----|:----|
-|[Fast_Read.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Misc/Fast_Read.cpp)|快读|
 |[Discrete.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Misc/Discrete.cpp)|离散化|
+|[Fast_Read.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Misc/Fast_Read.cpp)|快读|
 ### 字符串（String）
 |文件名|中文名称|
 |:----|:----|
