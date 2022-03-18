@@ -27,6 +27,7 @@
 |:----|:----|
 |[KMP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/KMP.cpp)|KMP|
 |[PAM.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/PAM.cpp)|回文自动机|
+|[Persistent_01_Trie.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Persistent_01_Trie.cpp)|可持久化01Trie|
 |[Sequence_Automaton.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Sequence_Automaton.cpp)|序列自动机|
 ### 树（Tree）
 |文件名|中文名称|
