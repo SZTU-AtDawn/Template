@@ -1,7 +1,6 @@
-// int N -> 字符串长度
-// int M -> 字符串的可能字符种类（字典大小）
-
 // 回文自动机
+#define MAX_N 10000	// 字符串长度
+#define MAX_M 26    // 字符集大小
 struct PAM {
     // 节点计数
     int top;
@@ -9,8 +8,8 @@ struct PAM {
     struct Node {
         // len：回文串长度；fail：失配指针；nxt[]子节点指针
         int len, fail;
-        int nxt[M];
-    } T[N * M];
+        int nxt[MAX_M];
+    } T[MAX_N * MAX_M];
     // 构造函数
     PAM(): top(0) {}
     // 新建节点

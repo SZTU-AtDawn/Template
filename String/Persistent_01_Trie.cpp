@@ -1,6 +1,10 @@
-// int root[] -> 版本根节点
-// int cnt[] -> 节点版本计数
-// int trie[][2] -> 01-Trie主结构
+// 可持久化01Trie
+#define MAX_N 10000
+
+int top;			// 计数
+int root[MAX_N];	// 版本根节点
+int cnt[MAX_N];		// 节点版本计数
+int trie[MAX_N][2];	// 01-Trie主结构
 
 // 插入新版本
 // x：数据，lst：上一版本根节点，now：新版本根节点
@@ -19,7 +23,6 @@ void insert(int x, int lst, int now) {
     // 叶节点也需要更新计数
     cnt[now] = cnt[lst] + 1;
 }
-
 // 历史版本区间查询
 // l：区间左端根节点，r：区间右端根节点，x：数据
 int query(int l, int r, int x) {

@@ -32,14 +32,14 @@ void getNextOptimized(const char pat[], int next[]) {
 }
 
 // 匹配函数，返回第一次匹配位置，可以修改实现多重匹配
-int match(const char str[], const char pat[], const int next[]) {
+int match(const char str[], const char pat[], const int next[], int patLen) {
     for (int i = 0, j = 0; str[i];)
         if (j == -1 || str[i] == pat[j]) {
             ++i;
             ++j;
             // 找到一个匹配，返回匹配起始位置
             if (!pat[j])
-                return i - M;
+                return i - patLen;
         }
         else 
             j = next[j];
