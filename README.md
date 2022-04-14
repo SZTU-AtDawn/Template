@@ -38,7 +38,7 @@
 |[ACAM.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/ACAM.cpp)|AC自动机|
 |[Extend_KMP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Extend_KMP.cpp)|扩展KMP|
 |[KMP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/KMP.cpp)|KMP算法|
-|[Manacher.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Manacher.cpp)|Manacher|
+|[Manacher.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Manacher.cpp)|Manacher算法|
 |[Minimum_Presentation.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Minimum_Presentation.cpp)|最小表示法|
 |[PAM.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/PAM.cpp)|回文自动机|
 |[Persistent_01_Trie.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Persistent_01_Trie.cpp)|可持久化01Trie|
