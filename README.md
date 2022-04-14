@@ -13,10 +13,20 @@
 |文件名|中文名称|
 |:----|:----|
 |[Binary_Index_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Binary_Index_Tree.cpp)|树状数组|
+|[Queue.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Queue.cpp)|循环对列|
 |[ST.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/ST.cpp)|ST表|
 |[Segment_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Segment_Tree.cpp)|普通线段树|
+|[Stack.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Stack.cpp)|手写栈|
 |[Union_Find.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Union_Find.cpp)|普通并查集|
 |[Weighted_Union_Find.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Weighted_Union_Find.cpp)|带权并查集|
+### 图论（Graph theory）
+|文件名|中文名称|
+|:----|:----|
+|[Dicnic.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dicnic.cpp)|Dicnic算法|
+|[Dijkstra.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dijkstra.cpp)|Dijkstra算法|
+|[EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/EK.cpp)|EK算法|
+|[Link_Cut_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Link_Cut_Tree.cpp)|动态树|
+|[Tarjan.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Tarjan.cpp)|Tarjan算法|
 ### 杂项（Misc）
 |文件名|中文名称|
 |:----|:----|
@@ -25,12 +35,13 @@
 ### 字符串（String）
 |文件名|中文名称|
 |:----|:----|
-|[KMP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/KMP.cpp)|KMP|
+|[ACAM.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/ACAM.cpp)|AC自动机|
+|[Extend_KMP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Extend_KMP.cpp)|扩展KMP|
+|[KMP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/KMP.cpp)|KMP算法|
+|[Manacher.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Manacher.cpp)|Manacher|
 |[Minimum_Presentation.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Minimum_Presentation.cpp)|最小表示法|
 |[PAM.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/PAM.cpp)|回文自动机|
 |[Persistent_01_Trie.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Persistent_01_Trie.cpp)|可持久化01Trie|
+|[SAM.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/SAM.cpp)|后缀自动机|
 |[Sequence_Automaton.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Sequence_Automaton.cpp)|序列自动机|
-### 树（Tree）
-|文件名|中文名称|
-|:----|:----|
-|[Link_Cut_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Tree/Link_Cut_Tree.cpp)|树链剖分|
+|[Trie.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/String/Trie.cpp)|字典树|
