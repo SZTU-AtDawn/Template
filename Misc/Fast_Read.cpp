@@ -1,3 +1,5 @@
+#include <cstdio>
+
 // 注：快读不能与其他标准读入方法混用
 
 // 替代getchar()
@@ -23,4 +25,30 @@ INT_TYPE readInt() {
         c = gc();
     }
     return f ? t : -t;
+}
+
+// 读字符串
+int readString(char s[]) {
+    int len = 0;
+    char c = gc();
+    while ((c == ' ' || c == '\n' || c == '\r') && c != EOF)
+        c = gc();
+    while (c != ' ' && c != '\n' && c != '\r' && c != EOF) {
+        s[len++] = c;
+        c = gc();
+    }
+    return s[len] = 0, len;
+}
+
+// 读行
+int readLine(char s[]) {
+    int len = 0;
+    char c = gc();
+    while ((c == ' ' || c == '\n' || c == '\r') && c != EOF)
+        c = gc();
+    while (c != '\n' && c != '\r' && c != EOF) {
+        s[len++] = c;
+        c = gc();
+    }
+    return s[len] = 0, len;
 }

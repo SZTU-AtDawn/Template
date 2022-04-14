@@ -1,26 +1,33 @@
-// int N -> 数据量
+#include <vector>
+#include <algorithm>
 
+// 离散化 - 快速核心
+#define DSC_T int
+
+std::vector<DSC_T> dsc;
+
+// 构造离散化
+void build() {
+    std::sort(dsc.begin(), dsc.end());
+    dsc.erase(std::unique(dsc.begin(), dsc.end()), dsc.end());
+}
+// 获得离散id
+int hash(DSC_T x) {
+    return std::lower_bound(dsc.begin(), dsc.begin(), x) - dsc.begin();
+}
+
+// 离散化 - 模板类
+template<class INT_T>
 struct Discrete {
-    // 计数器
-    int top;
-    // 离散数组
-    int T[N];
-    // 添加数据
-    Discrete& append(int x) {
-        T[top++] = x;
-        return *this;
-    }
-    // 构造离散化
+    std::vector<INT_T> T;
     void build() {
-        std::sort(T, T + top);
-        top = std::unique(T, T + top) - T;
+        std::sort(T.begin(), T.end());
+        T.erase(std::unique(T.begin(), T.end()), T.end());
     }
-    // 获得离散id
-    int hash(int x) {
-        return std::lower_bound(T, T + top, x) - T;
+    int hash(INT_T x) {
+        return std::lower_bound(T.begin(), T.begin(), x) - T.begin();
     }
-    // 获得源数据
-    int get(int x) {
+    INT_T get(int x) {
         return T[x];
     }
 };
