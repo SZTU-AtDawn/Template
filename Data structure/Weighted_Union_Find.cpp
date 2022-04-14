@@ -1,22 +1,24 @@
-// int N -> 最大独立集数量
+#include <cmath>
 
 // 注：log*(n)为迭代对数函数，增长极其缓慢，对应复杂度表达式近似为常数，定义如下：
 //      log*(n) = 0             , n <= 1
 //      log*(n) = log*(log n)    , n > 1
 // 例：log*(2^65536) = 5
+// 故一般认为 O(log*(n)) = O(1)
 
+#define MAX_N 10000
 struct WeightedUnionFind {
     // 父节点指针、当前节点到根的距离、当前节点所属子树大小
-    int fa[N], len[N], siz[N];
+    int fa[MAX_N], len[MAX_N], siz[MAX_N];
     // 初始化
     void init() {
-        for (int i = 1; i <= N; ++i) {
+        for (int i = 1; i <= MAX_N; ++i) {
             fa[i] = i;
             len[i] = 0;
             siz[i] = 1;
         }
     }
-    // 查找父亲 O(log*(N))
+    // 查找父亲 O(log*(N)) = O(1)
     int find(int x) {
         if (fa[x] == x)
             return x;

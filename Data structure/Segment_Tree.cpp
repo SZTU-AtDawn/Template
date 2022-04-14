@@ -1,11 +1,10 @@
-// int N -> 数据段长度
-// int M -> 查询次数
-
+// 线段树基础模板（区间和维护）
+#define MAX_N 100000
 struct SegTree {
     // 数据维护节点，在这里定义需要维护的数据，以区间和为例，包括一个区间和变量和懒标记变量
     struct Node {
         int sum, lazy;
-    } T[N << 2];
+    } T[MAX_N << 2];
     // 上拉函数，用子区间信息更新父区间
     void pushUp(int n) {
         T[n].sum = T[n << 1].sum + T[n << 1 | 1].sum;
@@ -89,7 +88,7 @@ struct SegTree {
         int mid = (l + r) >> 1;
         if (p <= mid)
             return queryNode(n << 1, l, mid, p);
-        return queryNode(n << 1 | 1, mid + 1, r, p, x);
+        return queryNode(n << 1 | 1, mid + 1, r, p);
     }
     // 区间查询
     int querySeg(int n, int l, int r, int L, int R) {
