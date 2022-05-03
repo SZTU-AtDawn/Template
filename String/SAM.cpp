@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 #include <cstring>
 
 // 后缀自动机
