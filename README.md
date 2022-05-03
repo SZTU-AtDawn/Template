@@ -1,4 +1,10 @@
 # 公共模板库
+## 声明
+本数据库对所有SZTU_AtDawn的现/前成员开放，也对前成员的队友们开放，欢迎现/前成员继续对仓库进行贡献
+
+如果需要内容搬运，请注明来源为SZTU_AtDawn
+
+届时SZTU_AtDawn正式退役后，本仓库的所有内容将全部贡献给SZTU-ACM，作为SZTU-ACM模板库的一部分
 ## 规则
 1. 请尽量使用**标准**名称命名，首字母大写，用下划线代替空格，写算法全名，如：`Aho_Corasick_Automaton.cpp`、`Segment_Tree.cpp`、`Red_Black_Tree.cpp`
 2. 除非是该模板的缩写名称更加常用/更加简明扼要，可以使用缩写，如：`KMP.cpp`、`FFT.cpp`、`SAM.cpp`
