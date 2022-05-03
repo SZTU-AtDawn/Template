@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 #include <queue>
 
 // AC自动机
