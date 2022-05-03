@@ -1,4 +1,4 @@
-// SNRainiar, from SZTU_AtDawn
+// Author：SNRainiar, from SZTU_AtDawn
 
 // 手写栈 - 快速核心
 #define STK_T int
