@@ -1,3 +1,5 @@
+// SNRainiar, from SZTU_AtDawn
+
 // 注：log*(n)为迭代对数函数，增长极其缓慢，对应复杂度表达式近似为常数，定义如下：
 //      log*(n) = 0             , n <= 1
 //      log*(n) = log*(log n)    , n > 1
