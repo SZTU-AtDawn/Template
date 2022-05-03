@@ -1,4 +1,4 @@
-// SNRainiar, from SZTU_AtDawn
+// Author：SNRainiar, from SZTU_AtDawn
 
 // 手写队列 - 快速核心
 #define QUE_T int
