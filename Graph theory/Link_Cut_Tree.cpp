@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 // int dep[] -> 深度
 // int fa[] -> 父节点
 // int siz[] -> 子树大小
