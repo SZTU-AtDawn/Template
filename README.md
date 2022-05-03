@@ -6,7 +6,7 @@
 
 届时SZTU_AtDawn正式退役后，本仓库的所有内容将全部贡献给SZTU-ACM，作为SZTU-ACM模板库的一部分
 ## 规则
-1. 请尽量使用**标准**名称命名，首字母大写，用下划线代替空格，写算法全名，如：`Aho_Corasick_Automaton.cpp`、`Segment_Tree.cpp`、`Red_Black_Tree.cpp`
+1. 请尽量使用**标准**名称命名，首字母大写，用下划线代替空格，写算法全名，如：`Union_Find.cpp`、`Segment_Tree.cpp`、`Red_Black_Tree.cpp`
 2. 除非是该模板的缩写名称更加常用/更加简明扼要，可以使用缩写，如：`KMP.cpp`、`FFT.cpp`、`SAM.cpp`
 3. 如果是数据结构，则打包成结构体，如果是算法，则打包成函数或结构体（模块化）；两者都单独放在.cpp文件中，不需要添加相关上下文代码
 4. **必须对引用的外部变量进行说明**，如：`// N为数组长度`
