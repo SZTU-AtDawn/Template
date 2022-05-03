@@ -28,7 +28,6 @@ struct SAM {
         int p = las, np = ++tot;  // 记录尾节点并建立新节点
         las = tot;  // 更新下一次插入的尾节点
         T[np].len = T[p].len + 1; // 更新新节点的串长
-        T[np].fa = p; // 更新新节点的父节点
         for (; p && !T[p].next[c]; p = T[p].fa) // 回溯parent树链，只要有空儿子就连到新节点，否则停止
             T[p].next[c] = np;
         if (!p) // 回到了根节点，那么新节点的父节点就是根节点
