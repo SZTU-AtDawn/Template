@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 // KMP需要先预处理next数组，再用于匹配
 
 // 无优化版本的getNext
