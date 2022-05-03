@@ -1,3 +1,5 @@
+// SNRainiar, from SZTU_AtDawn
+
 #include <cmath>
 #include <algorithm>
 
