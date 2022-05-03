@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 #define MAX_N 100
 
 // Floyd 算法 O(n^3)
