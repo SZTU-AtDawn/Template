@@ -1,3 +1,5 @@
+// SNRainiar, from SZTU_AtDawn
+
 // 手写队列 - 快速核心
 #define QUE_T int
 #define QUE_SZ 1000
