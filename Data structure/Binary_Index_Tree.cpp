@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 // 树状数组 - 快速核心
 #define BIT_T int
 #define BIT_SZ 1000
