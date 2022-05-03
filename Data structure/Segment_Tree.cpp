@@ -1,4 +1,4 @@
-// SNRainiar, from SZTU_AtDawn
+// Author：SNRainiar, from SZTU_AtDawn
 
 // 线段树基础模板（区间和维护）
 #define MAX_N 100000
