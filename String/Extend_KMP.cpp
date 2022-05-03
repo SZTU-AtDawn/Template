@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 // 扩展KMP（Z函数）
 #define MAX_N 100000
 
