@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 #include <cmath>
 
 // 注：log*(n)为迭代对数函数，增长极其缓慢，对应复杂度表达式近似为常数，定义如下：
