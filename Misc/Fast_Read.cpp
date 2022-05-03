@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 #include <cstdio>
 
 // 注：快读不能与其他标准读入方法混用
