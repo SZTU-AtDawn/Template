@@ -1,3 +1,5 @@
+// Author：SNRainiar, from SZTU_AtDawn
+
 #define MAX_N 1000
 #define MAX_M 10000
 
