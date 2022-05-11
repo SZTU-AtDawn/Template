@@ -15,6 +15,10 @@
 7. 记得更新快速列表（按照字典序）
 ## 快速列表
 按照此格式（md源码）更新表格：`|[这里填文件名](这里填文件的github网址)|这里填模板名|`
+### 计算几何（Computational geometry）
+|文件名|中文名称|
+|:----|:----|
+|[All_In_One_Structure.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Computational%20geometry/All_In_One_Structure.cpp)|计算几何多合一结构包|
 ### 数据结构（Data structure）
 |文件名|中文名称|
 |:----|:----|
