@@ -1,20 +1,22 @@
-// Author：SNRainiar, from SZTU_AtDawn
+// 动态树
+// Author：SMAX_NRainiar, from SZTU_AtDawn
 
-// int dep[] -> 深度
-// int fa[] -> 父节点
-// int siz[] -> 子树大小
-// int son[] -> 重儿子
-// int id[] -> 树链重排后的对应编号
-// int top[] -> 树链的起始节点
-// int a[] -> 树节点权值
-// int b[] -> 树链重排后的节点权值
-// int N -> 树节点数量
-// int acc -> 树节点重排时使用的递增变量
+#define MAX_N 10000
 
-// int head[] -> 链式前向星头指针
-// struct e edge[] -> 链式前向星边跳表
+// 树结构
+int head[];
+struct e {
+    int to, nxt;
+} edge[];
 
-// struct SgT tr -> 线段树 -> https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Segment_Tree.cpp
+// 深度、父节点、子树大小、重儿子
+int dep[], fa[], siz[], son[];
+// 树链重排后的对应编号、树链的起始节点、树节点权值、树链重排后的节点权值
+int id[], top[], a[], b[];
+// 树节点重排时使用的递增变量
+int acc;
+// 线段树 -> https://github.com/SZTU-AtDawn/Template/blob/main/Data%20structure/Segment_Tree.cpp
+struct SegTree tr;
 
 // 动态树预处理需要两步dfs：
 
@@ -37,7 +39,6 @@ void dfs1(int x, int f, int d) {
             }
         }
 }
-
 // 2. 剖分树链（树链重排）
 // 当前节点x，当前树链的起始节点tp
 void dfs2(int x, int tp) {
@@ -62,7 +63,7 @@ void init() {
     dfs1(1, -1, 0);
     dfs2(1, 1);
     // 将树链挂载到线段树上维护
-    tr.build(1, 1, N, b);
+    tr.build(1, 1, MAX_N, b);
 }
 
 // 动态树的基本操作：
@@ -70,13 +71,12 @@ void init() {
 // 1. 子树的查询与修改
 inline int query(int x) {
     // 由动态树定义可知x的子树就是重排后x的编号开始，长度为x的子树大小
-    return tr.qry(1, 1, N, id[x], id[x] + siz[x] - 1);
+    return tr.qry(1, 1, MAX_N, id[x], id[x] + siz[x] - 1);
 }
 inline void update(int x, int y) {
     // 理论同上
-    tr.upd(1, 1, N, id[x], id[x] + siz[x] - 1, y);
+    tr.upd(1, 1, MAX_N, id[x], id[x] + siz[x] - 1, y);
 }
-
 // 2. 路径的查询与修改
 int query(int x, int y) {
     int ans = 0;
@@ -86,7 +86,7 @@ int query(int x, int y) {
         if (dep[top[x]] < dep[top[y]])
             std::swap(x, y);
         // 统计x所在链的答案
-        ans += tr.qry(1, 1, N, id[top[x]], id[x]);
+        ans += tr.qry(1, 1, MAX_N, id[top[x]], id[x]);
         // 让x到父节点所在链
         x = fa[top[x]];
     }
@@ -94,7 +94,7 @@ int query(int x, int y) {
     if (dep[top[x]] < dep[top[y]])
         std::swap(x, y);
     // 此时x和y在同一条链上，直接区间查询就能获取答案
-    return ans + tr.qry(1, 1, N, id[x], id[y]);
+    return ans + tr.qry(1, 1, MAX_N, id[x], id[y]);
 }
 void update(int x, int y, int z) {
     // 如果x和y不在同一条链上
@@ -103,7 +103,7 @@ void update(int x, int y, int z) {
         if (dep[top[x]] < dep[top[y]])
             std::swap(x, y);
         // 修改x所在链
-        tr.upd(1, 1, N, id[top[x]], id[x], z);
+        tr.upd(1, 1, MAX_N, id[top[x]], id[x], z);
         // 让x到父节点所在链
         x = fa[top[x]];
     }
@@ -111,5 +111,5 @@ void update(int x, int y, int z) {
     if (dep[top[x]] < dep[top[y]])
         std::swap(x, y);
     // 此时x和y在同一条链上，直接区间修改即可
-    tr.upd(1, 1, N, id[x], id[y], z);
+    tr.upd(1, 1, MAX_N, id[x], id[y], z);
 }

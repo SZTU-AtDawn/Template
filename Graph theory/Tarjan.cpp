@@ -1,15 +1,13 @@
+// Tarjan算法，用来解决有向图强连通分量、无向图双联通分量、无向图割点与桥、离线LCA问题等
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <stack>
-#include <algorithm>
-
-// Tarjan算法，用来解决有向图强连通分量、无向图双联通分量、无向图割点与桥、离线LCA问题等
+// 图结构
 int head[];
 struct e {
     int to, nxt;
 } edge[];
 
-// 离线LCA，需要用并查集
+// 1. 离线LCA，需要用并查集
 #define MAX_N 10000
 #define MAX_Q 1000
 
@@ -31,7 +29,7 @@ void tarjan(int u) {
             ans[u][q[u][i]] = find(q[u][i]);
 }
 
-// 无向图割点与桥
+// 2. 无向图割点与桥
 #define MAX_N 10000
 
 int top;
@@ -67,10 +65,9 @@ void tarjan(int u, int fa) {
     if (size >= 2 && u == fa)
         isCut[u] = true;
 }
-
 // 对于无向图的双联通分量，通过把桥从边集中删除，再遍历边用并查集求解
 
-// 有向图强连通分量
+// 3. 有向图强连通分量
 #define MAX_N 10000
 
 int top;

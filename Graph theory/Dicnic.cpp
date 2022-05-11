@@ -1,20 +1,17 @@
+// Dicnic算法本质上是优化的EK算法 O(V^2E)，适合稠密图
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <cstring>
+#define MAX_N 10000
+#define INF 0x3f3f3f3f
 
-#include <queue>
-
+// 流量网络
 int head[];
 struct e {
     int to, f, nxt;
 } edge[];
 
-// Dicnic算法本质上是优化的EK算法 O(V^2E)，适合稠密图
-#define MAX_N 10000
-#define INF 0x3f3f3f3f
-
+// 深度、当前弧
 int dep[MAX_N], cur[MAX_N];
-
 // 生成分层图
 bool bfs(int s, int t) {
     memset(dep, 0, sizeof(dep));
@@ -33,7 +30,6 @@ bool bfs(int s, int t) {
     }
     return dep[t] > 0;
 }
-
 // 修改流量，使用当前弧优化
 int dfs(int u, int t, int f) {
     if (!f || u == t)
@@ -55,7 +51,7 @@ int dfs(int u, int t, int f) {
     }
     return flow;
 }
-
+// Dicnic主方法
 int dicnic(int s, int t) {
     int ans = 0;
     while (bfs(s, t))

@@ -1,21 +1,18 @@
+// EK最大流算法 O(VE^2) ，适合稀疏图
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <cstring>
+#define MAX_N 10000
+#define INF 0x3f3f3f3f
 
-#include <queue>
-
-// EK最大流算法 O(VE^2) ，适合稀疏图
+// 流量网络
 int head[];
 struct e {
     int to, f, nxt;
 } edge[];
 
+// 前驱节点、前驱边、增广路径流量
+int pre[MAX_N], pth[MAX_N], dis[MAX_N];
 // 找增广路径，EK算法每次只找一条最短的增广路
-#define MAX_N 10000
-#define INF 0x3f3f3f3f
-
-int pre[MAX_N], dis[MAX_N], pth[MAX_N];
-
 int bfs(int s, int t) {
     memset(pre, -1, sizeof(pre));
     std::queue<int> que;
@@ -36,7 +33,7 @@ int bfs(int s, int t) {
     }
     return pre[t] == -1 ? -1 : dis[t];
 }
-
+// EK主方法
 int EK(int s, int t) {
     int ans = 0;
     while (true) {

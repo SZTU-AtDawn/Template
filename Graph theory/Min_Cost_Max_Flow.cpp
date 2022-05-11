@@ -1,17 +1,20 @@
+// 最小费用最大流
 // Author：SNRainiar, from SZTU_AtDawn
 
 #define MAX_N 1000
 #define MAX_M 10000
 
-// 最小费用最大流
+// 流量网络
 int head[MAX_N + 5];
 struct e {
     int to, f, c, nxt;
 } edge[MAX_M];
 
-// 寻找最小费用増广路
+// 最小费用路径、前驱节点、前驱边
 int dis[MAX_N + 5], pren[MAX_N + 5], pres[MAX_N + 5];
+// 集合存在标志
 bool vis[MAX_N + 5];
+// 寻找最小费用増广路（SPFA）
 bool spfa(int st, int ed) {
     std::queue<int> que;
     memset(dis, 0x3f, sizeof(dis));
@@ -29,16 +32,15 @@ bool spfa(int st, int ed) {
                 dis[edge[i].to] = dis[u] + edge[i].c;
                 pren[edge[i].to] = u;
                 pres[edge[i].to] = i;
-                if (!vis[edge[i].to) {
+                if (!vis[edge[i].to]) {
                     vis[edge[i].to] = true;
                     que.emplace(edge[i].to);
                 }
             }
     }
     return dis[ed] != 0x3f3f3f3f;
-}
-                         
-// 最小费用最大流
+}                
+// 最小费用最大流主函数
 std::pair<int, int> mcmf(int st, int ed) {
     int cost = 0, flow = 0;
     while (spfa(st, ed)) {
@@ -55,4 +57,3 @@ std::pair<int, int> mcmf(int st, int ed) {
     }
     return {cost, flow};
 }
-                         

@@ -1,20 +1,20 @@
+// Dijkstra
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <cstring>
-
-#include <queue>
-
-// Dijkstra模板
 #define MAX_N 100000
 #define MAX_M 1000000
 
+// 图结构
 int head[MAX_N];
 struct e {
     int to, val, nxt;
 } edge[MAX_M];
+// 最短路
 int dis[MAX_N];
+// 访问标记
 bool vis[MAX_N];
 
+// Dijkstra主方法
 void dijkstra() {
     memset(vis, false, sizeof(vis));
     std::priority_queue<std::pair<int, int>> que;
