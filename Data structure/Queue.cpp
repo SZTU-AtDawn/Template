@@ -1,42 +1,29 @@
+// 循环队列 - 快速核心
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 手写队列 - 快速核心
-#define QUE_T int
-#define QUE_SZ 1000
-
+#define MAX_N 100000
+// 队首指针、队尾指针
 int qH, qT;
-QUE_T que[QUE_SZ];
+// 循环队列主结构
+int que[MAX_N];
 
-inline void push(QUE_T x) {
-	que[++qT >= QUE_SZ ? (qT = 0) : qT] = x;
+// 清空
+inline void clear() {
+	qH = qT = 0;
 }
-inline QUE_T pop() {
-	return que[++qH >= QUE_SZ ? (qH = 0) : qH];
+// 入队
+inline void push(int x) {
+	que[(++qT) %= MAX_N] = x;
 }
+// 出队
+inline int pop() {
+	return que[(++qH) %= MAX_N];
+}
+// 检测空队列
 inline bool isEmpty() {
 	return qH != qT;
 }
+// 检测满队列
 inline bool isFull() {
-	return (qH + QUE_SZ - 1) % QUE_SZ == qT;
+	return (qT + 1) % MAX_N == qH;
 }
-
-// 手写队列 - 模板类
-template<class T>
-struct Queue {
-	int head, tail, size;
-	T *que;
-	Queue(int sz): head(0), tail(0), size(sz), que(new T[sz]) {}
-	~Queue() {delete[] que;}
-	void push(T x) {
-		que[++tail >= size ? (tail = 0) : tail] = x;
-	}
-	T pop() {
-		return que[++head >= size ? (head = 0) : head];
-	}
-	bool isEmpty() {
-		return head != tail;
-	}
-	bool isFull() {
-		return (head + size - 1) % size == tail;
-	}
-};

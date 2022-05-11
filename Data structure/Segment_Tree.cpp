@@ -1,6 +1,6 @@
+// 线段树基础模板（区间和维护）
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 线段树基础模板（区间和维护）
 #define MAX_N 100000
 struct SegTree {
     // 数据维护节点，在这里定义需要维护的数据，以区间和为例，包括一个区间和变量和懒标记变量

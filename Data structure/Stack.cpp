@@ -1,48 +1,29 @@
+// 手写栈 - 快速核心
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 手写栈 - 快速核心
-#define STK_T int
-#define STK_SZ 1000
-
+#define MAX_N 100000
+// 栈顶指针
 int top;
-STK_T stk[STK_SZ];
+// 栈主结构
+int stk[MAX_N];
 
-inline void clr() {
+// 清空
+inline void clear() {
 	top = 0;
 }
-inline void push(STK_T x) {
+// 入栈
+inline void push(int x) {
 	stk[top++] = x;
 }
-inline STK_T pop() {
+// 出栈
+inline int pop() {
 	return stk[--top];
 }
-inline bool isFull() {
-	return top >= STK_SZ;
-}
+// 检测空栈
 inline bool isEmpty() {
 	return !top;
 }
-
-// 手写栈 - 模板类
-template<class T>
-struct Stack {
-	int top, size;
-	T *stk;
-	Stack(int sz): top(0), size(sz), stk(new T[sz]) {}
-	~Stack() {delete[] stk;}
-	void clear() {
-		top = 0;
-	}
-	void push(T x) {
-		stk[top++] = x;
-	}
-	T pop() {
-		return stk[--top];
-	}
-	bool isFull() {
-		return top >= size;
-	}
-	bool isEmpty() {
-		return !top;
-	}
-};
+// 检测满栈
+inline bool isFull() {
+	return top >= MAX_N;
+}
