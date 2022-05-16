@@ -39,6 +39,11 @@
 |[Link_Cut_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Link_Cut_Tree.cpp)|动态树|
 |[Min_Cost_Max_Flow.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Min_Cost_Max_Flow.cpp)|最小费用最大流|
 |[Tarjan.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Tarjan.cpp)|Tarjan算法|
+### 数学（Math）
+|文件名|中文名称|
+|:----|:----|
+|[FFT.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/FFT.cpp)|快速傅里叶变换|
+|[Quick_Power.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/Quick_Power.cpp)|快速幂|
 ### 杂项（Misc）
 |文件名|中文名称|
 |:----|:----|
