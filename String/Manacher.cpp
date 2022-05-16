@@ -1,8 +1,6 @@
+// Manacher算法
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <algorithm>
-
-// Manacher算法
 #define MAX_N 10000
 
 int p[MAX_N << 1];		// p[i]: 以i为中心的双倍回文串半径，其中 p[i] - 1 为原回文串长度

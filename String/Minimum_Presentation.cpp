@@ -1,8 +1,6 @@
+// 最小表示法
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <cstring>
-
-// 最小表示法
 // 寻找一个收尾连接字符串的特定位置，使得从该位置开始的字符串是字典序最小的
 int minimumPresentation(const char s[]) {
     int i = 0, j = 1, k = 0, t, len = strlen(s);

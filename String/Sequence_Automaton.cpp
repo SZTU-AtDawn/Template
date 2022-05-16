@@ -1,6 +1,6 @@
+// 序列自动机：对于一个序列，查询其是否存在某一个子序列
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 序列自动机：对于一个序列，查询其是否存在某一个子序列
 #define MAX_N 100000	// 序列长度
 #define MAX_M 26 		// 字符集大小
 

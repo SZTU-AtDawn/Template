@@ -1,6 +1,6 @@
+// 扩展KMP（Z函数）
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 扩展KMP（Z函数）
 #define MAX_N 100000
 
 int Z[MAX_N];	// Z[i]: 模式串 S[0..MAX_N - 1] 与其第i个后缀 S[i..MAX_N - 1] 的最长公共前缀

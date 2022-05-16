@@ -1,6 +1,6 @@
+// 可持久化01Trie
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 可持久化01Trie
 #define MAX_N 10000
 
 int top;			// 计数

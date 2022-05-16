@@ -1,24 +1,11 @@
+// 后缀自动机
 // Author：SNRainiar, from SZTU_AtDawn
 
-#include <cstring>
-
-// 后缀自动机
 struct SAM {
     // 节点结构体
     struct Node {
         int next[26]; // 子节点
         int len, fa;  // 节点串长与父节点
-        // 构造函数
-        Node(): len(0) {
-            memset(next, 0, sizeof(next));
-        }
-        // 强赋值运算符重载
-        Node& operator=(const Node& tmp) {
-            memcpy(next, tmp.next, sizeof(next));
-            len = tmp.len;
-            fa = tmp.fa;
-            return *this;
-        }
     } *T;
     int las, tot; // 上次操作的尾节点与总节点计数
     // 构造函数

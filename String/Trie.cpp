@@ -1,6 +1,6 @@
+// Trie树
 // Author：SNRainiar, from SZTU_AtDawn
 
-// Trie树
 #define MAX_N 10000
 #define MAX_M 26
 

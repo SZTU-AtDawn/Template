@@ -1,8 +1,9 @@
+// 回文自动机
 // Author：SNRainiar, from SZTU_AtDawn
 
-// 回文自动机
 #define MAX_N 10000	// 字符串长度
 #define MAX_M 26    // 字符集大小
+
 struct PAM {
     // 节点计数
     int top;
