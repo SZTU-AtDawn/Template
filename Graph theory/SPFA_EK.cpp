@@ -4,14 +4,14 @@
 #define MAX_N 1000
 #define MAX_M 10000
 
-// 流量网络
+// 流量网络，边的序号应从1开始，使得通过异或运算就可以得到反流边
 int head[MAX_N + 5];
 struct e {
     int to, f, c, nxt;
 } edge[MAX_M];
 
 // 最小费用路径、前驱节点、前驱边
-int dis[MAX_N + 5], pren[MAX_N + 5], pres[MAX_N + 5];
+int dis[MAX_N + 5], prv[MAX_N + 5], pre[MAX_N + 5];
 // 集合存在标志
 bool vis[MAX_N + 5];
 // 寻找最小费用増广路（SPFA）
@@ -20,7 +20,6 @@ bool spfa(int st, int ed) {
     memset(dis, 0x3f, sizeof(dis));
     memset(vis, false, sizeof(vis));
     dis[st] = 0;
-    pren[st] = pres[st] = -1;
     que.emplace(st);
     vis[st] = true;
     while (!que.empty()) {
@@ -30,8 +29,8 @@ bool spfa(int st, int ed) {
         for (int i = head[u]; i; i = edge[i].nxt)
             if (dis[edge[i].to] > dis[u] + edge[i].c && edge[i].f > 0) {
                 dis[edge[i].to] = dis[u] + edge[i].c;
-                pren[edge[i].to] = u;
-                pres[edge[i].to] = i;
+                prv[edge[i].to] = u;
+                pre[edge[i].to] = i;
                 if (!vis[edge[i].to]) {
                     vis[edge[i].to] = true;
                     que.emplace(edge[i].to);
@@ -45,14 +44,14 @@ std::pair<int, int> mcmf(int st, int ed) {
     int cost = 0, flow = 0;
     while (spfa(st, ed)) {
         int mn = 0x3f3f3f3f;
-        for (int i = pren[ed]; i != st; i = pren[i])
-            mn = std::min(mn, edge[pres[i]].f);
+        for (int i = ed; i != st; i = prv[i])
+            mn = std::min(mn, edge[pre[i]].f);
         flow += mn;
         cost += mn * dis[ed];
-        for (int i = pren[ed]; i != st; i = pren[i]) {
-            edge[pres[i]].f -= mn;
+        for (int i = ed; i != st; i = prv[i]) {
+            edge[pre[i]].f -= mn;
             // 反流边
-            edge[pres[i] ^ 1].f += mn;
+            edge[pre[i] ^ 1].f += mn;
         }
     }
     return {cost, flow};
