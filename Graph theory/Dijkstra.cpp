@@ -14,7 +14,7 @@ int dis[MAX_N];
 // 访问标记
 bool vis[MAX_N];
 
-// Dijkstra主方法
+// Dijkstra主方法 O((V+E)logE)
 void dijkstra() {
     memset(vis, false, sizeof(vis));
     std::priority_queue<std::pair<int, int>> que;
