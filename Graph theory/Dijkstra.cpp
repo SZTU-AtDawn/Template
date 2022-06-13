@@ -1,8 +1,8 @@
 // Dijkstra
 // Author：SNRainiar, from SZTU_AtDawn
 
-#define MAX_N 100000
-#define MAX_M 1000000
+#define MAX_N 10000
+#define MAX_M 100000
 
 // 图结构
 int head[MAX_N];
@@ -15,12 +15,12 @@ int dis[MAX_N];
 bool vis[MAX_N];
 
 // Dijkstra主方法 O((V+E)logE)
-void dijkstra() {
+void dijkstra(int s) {
     memset(vis, false, sizeof(vis));
-    std::priority_queue<std::pair<int, int>> que;
     memset(dis, 0x3F, sizeof(dis));
-    que.emplace(0, 1);
-    dis[1] = 0;
+    std::priority_queue<std::pair<int, int>> que;
+    que.emplace(0, s);
+    dis[s] = 0;
     while (!que.empty()) {
         auto [d, u] = que.top();
         que.pop();
