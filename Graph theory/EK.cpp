@@ -1,14 +1,15 @@
 // EK最大流算法 O(VE^2) ，适合稀疏图
 // Author：SNRainiar, from SZTU_AtDawn
 
-#define MAX_N 10000
+#define MAX_N 100
+#define MAX_M 10000
 #define INF 0x3f3f3f3f
 
 // 流量网络
-int head[];
+int head[MAX_N];
 struct e {
     int to, f, nxt;
-} edge[];
+} edge[MAX_M];
 
 // 前驱节点、前驱边、增广路径流量
 int pre[MAX_N], pth[MAX_N], dis[MAX_N];
