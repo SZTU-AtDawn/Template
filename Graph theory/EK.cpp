@@ -24,14 +24,14 @@ int bfs(int s, int t) {
         if (u == t)
             break;
         for (int i = head[u]; i; i = edge[i].nxt)
-            if (pre[edge[i].to] == -1 && edge[i].f > 0) {
+            if (edge[i].f && pre[edge[i].to] == -1) {
                 pre[edge[i].to] = u;
                 pth[edge[i].to] = i;
                 dis[edge[i].to] = std::min(dis[u], edge[i].f);
                 que.emplace(edge[i].to);
             }
     }
-    return pre[t] == -1 ? -1 : dis[t];
+    return ~pre[t] ? dis[t] : -1;
 }
 // EK主方法
 int EK(int s, int t) {
