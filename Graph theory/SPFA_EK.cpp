@@ -39,7 +39,7 @@ bool spfa(int st, int ed) {
     }
     return dis[ed] != 0x3f3f3f3f;
 }                
-// 最小费用最大流主函数 O(V^2 E^3)，实际情况远小于理论时间复杂度
+// 最小费用最大流主函数 O(V^2 E^2)，实际情况远小于理论时间复杂度
 std::pair<int, int> mcmf(int st, int ed) {
     int cost = 0, flow = 0;
     while (spfa(st, ed)) {
