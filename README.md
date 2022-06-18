@@ -32,11 +32,12 @@
 ### 图论（Graph theory）
 |文件名|中文名称|
 |:----|:----|
-|[Dijkstra.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dijkstra.cpp)|Dijkstra算法|
+|[Dijkstra.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dijkstra.cpp)|Dijkstra最短路|
 |[Dijkstra_EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dijkstra_EK.cpp)|基于Dijkstra的最小费用最大流|
 |[Dinic.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dinic.cpp)|Dinic最大流|
-|[EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/EK.cpp)|EK算法|
-|[Floyd.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Floyed.cpp)|Floyed算法|
+|[EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/EK.cpp)|EK最大流|
+|[Floyd.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Floyed.cpp)|Floyed最短路|
+|[ISAP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/ISAP.cpp)|ISAP最大流|
 |[Link_Cut_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Link_Cut_Tree.cpp)|动态树|
 |[SPFA_EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/SPFA_EK.cpp)|基于SPFA的最小费用最大流|
 |[Tarjan.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Tarjan.cpp)|Tarjan算法|
