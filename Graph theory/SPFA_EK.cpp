@@ -3,31 +3,32 @@
 
 #define MAX_N 1000
 #define MAX_M 10000
+#define INF 0x3f3f3f3f
 
 // 流量网络，边的序号应从1开始，使得通过异或运算就可以得到反流边
-int head[MAX_N + 5];
+int head[MAX_N];
 struct e {
     int to, f, c, nxt;
 } edge[MAX_M];
 
 // 最小费用路径、前驱节点、前驱边
-int dis[MAX_N + 5], prv[MAX_N + 5], pre[MAX_N + 5];
+int dis[MAX_N], prv[MAX_N], pre[MAX_N];
 // 集合存在标志
-bool vis[MAX_N + 5];
+bool vis[MAX_N];
 // 寻找最小费用増广路（SPFA）
 bool spfa(int st, int ed) {
-    std::queue<int> que;
     memset(dis, 0x3f, sizeof(dis));
     memset(vis, false, sizeof(vis));
+    std::queue<int> que;
     dis[st] = 0;
-    que.emplace(st);
     vis[st] = true;
+    que.emplace(st);
     while (!que.empty()) {
         int u = que.front();
         que.pop();
         vis[u] = false;
         for (int i = head[u]; i; i = edge[i].nxt)
-            if (dis[edge[i].to] > dis[u] + edge[i].c && edge[i].f > 0) {
+            if (edge[i].f && dis[edge[i].to] > dis[u] + edge[i].c) {
                 dis[edge[i].to] = dis[u] + edge[i].c;
                 prv[edge[i].to] = u;
                 pre[edge[i].to] = i;
@@ -37,13 +38,13 @@ bool spfa(int st, int ed) {
                 }
             }
     }
-    return dis[ed] != 0x3f3f3f3f;
-}                
-// 最小费用最大流主函数 O(V^2 E^2)，实际情况远小于理论时间复杂度
+    return dis[ed] != INF;
+}
+// SPFA_EK主函数 O(V^2 E^2)，实际情况远小于理论时间复杂度
 std::pair<int, int> mcmf(int st, int ed) {
     int cost = 0, flow = 0;
     while (spfa(st, ed)) {
-        int mn = 0x3f3f3f3f;
+        int mn = INF;
         for (int i = ed; i != st; i = prv[i])
             mn = std::min(mn, edge[pre[i]].f);
         flow += mn;
