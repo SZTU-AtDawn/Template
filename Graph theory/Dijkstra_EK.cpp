@@ -17,7 +17,7 @@ int dis[MAX_N], prv[MAX_N], pre[MAX_N], h[MAX_N];
 bool vis[MAX_N];
 // 寻找最小费用増广路（Dijkstra）
 bool dijkstra(int s, int t) {
-    memset(dis, 0xx3f, sizeof(dis));
+    memset(dis, 0x3f, sizeof(dis));
     memset(vis, false, sizeof(vis));
     std::priority_queue<std::pair<int, int>> que;
     dis[s] = 0;
