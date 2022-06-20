@@ -41,7 +41,7 @@ bool dijkstra(int s, int t) {
             h[i] += dis[i];
     return dis[t] != INF;
 }
-// 最小费用最大流主函数 O((V^2E+VE^2)logE)，实际情况远小于理论时间复杂度
+// Dijkstra_EK主函数 O((V^2E+VE^2)logE)，实际情况远小于理论时间复杂度
 std::pair<int, int> mcmf(int s, int t) {
     int cost = 0, flow = 0;
     while (dijkstra(s, t)) {
@@ -49,7 +49,8 @@ std::pair<int, int> mcmf(int s, int t) {
         for (int i = t; i != s; i = prv[i])
             mn = std::min(mn, edge[pre[i]].f);
         flow += mn;
-        cost += mn * dis[ed];
+        // 需要使用势函数更新
+        cost += mn * h[ed];
         for (int i = t; i != s; i = prv[i]) {
             edge[pre[i]].f -= mn;
             // 反流边
