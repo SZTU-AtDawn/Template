@@ -47,8 +47,8 @@ int dfs(int u, int t, int f) {
     }
     return flow;
 }
-// Dicnic主方法
-int dicnic(int s, int t) {
+// Dinic主方法
+int dinic(int s, int t) {
     int ans = 0;
     while (bfs(s, t))
         ans += dfs(s, t, INF);
