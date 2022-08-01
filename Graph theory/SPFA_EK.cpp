@@ -16,13 +16,13 @@ int dis[MAX_N], prv[MAX_N], pre[MAX_N];
 // 集合存在标志
 bool vis[MAX_N];
 // 寻找最小费用増广路（SPFA）
-bool spfa(int st, int ed) {
-    memset(dis, 0x3f, sizeof(dis));
-    memset(vis, false, sizeof(vis));
+bool spfa(int s, int t) {
     std::queue<int> que;
-    dis[st] = 0;
-    vis[st] = true;
-    que.emplace(st);
+    que.emplace(s);
+    memset(dis, 0x3f, sizeof(dis));
+    dis[s] = 0;
+    memset(vis, false, sizeof(vis));
+    vis[s] = true;
     while (!que.empty()) {
         int u = que.front();
         que.pop();
@@ -38,18 +38,18 @@ bool spfa(int st, int ed) {
                 }
             }
     }
-    return dis[ed] != INF;
+    return dis[t] != INF;
 }
 // SPFA_EK主函数 O(V^2 E^2)，实际情况远小于理论时间复杂度
-std::pair<int, int> mcmf(int st, int ed) {
+std::pair<int, int> mcmf(int s, int t) {
     int cost = 0, flow = 0;
-    while (spfa(st, ed)) {
+    while (spfa(s, t)) {
         int mn = INF;
-        for (int i = ed; i != st; i = prv[i])
+        for (int i = t; i != s; i = prv[i])
             mn = std::min(mn, edge[pre[i]].f);
         flow += mn;
-        cost += mn * dis[ed];
-        for (int i = ed; i != st; i = prv[i]) {
+        cost += mn * dis[t];
+        for (int i = t; i != s; i = prv[i]) {
             edge[pre[i]].f -= mn;
             // 反流边
             edge[pre[i] ^ 1].f += mn;
