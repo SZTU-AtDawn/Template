@@ -1,25 +1,20 @@
 //有向图的最小生成树————朱刘算法
 //算法顺序：扫描前驱——搜索有向环——标记环——缩点
-#include<bits/stdc++.h>
-using namespace std;
-const int maxn=1e3+5,inf=1e9;
-int vis[maxn],tag[maxn],pre[maxn];
-int n,m;
-struct dat{
-    long long x,y;
-}pos[maxn];
-double G[maxn][maxn],w[maxn],ans=0;
-void mst(int u)
+
+//G[N][N]：邻接矩阵
+//pre[i]记录点i的最小入边
+//w[i]记录点i的最小入边边权
+double mst(int u)//指定u为树形图的根
 {
-    ans=0;
+    ans=0;//记录结果
     for(int i=1;i<=n;++i)
-        tag[i]=0;  //tag[x]为true表示点x被移除，不再参加任何步骤
+        tag[i]=0;  //tag[x]为true表示点x被移除，不再参加下列代码中的任何步骤
     while(1)
     {
         for(int i=1;i<=n;++i)
         {
-            if(tag[i] || i==u) continue;
-            pre[i]=i; w[i]=inf; //pre[i],w[i]记录点i的最小入边以及边权
+            if(tag[i] || i==u) continue; //根没有入边
+            pre[i]=i; w[i]=inf; 
             for(int j=1;j<=n;++j)
             {
                 if(!tag[j])
@@ -31,8 +26,7 @@ void mst(int u)
             }
             if(pre[i]==i) //如果找不到入边，则树形图不存在
             {
-                ans=-1;
-                return;
+                return -1;
             }
         }
         /*判断一个点是否在环上？首先，如果沿着前驱能找到根，那一定不在环上；若陷入循环（设一个计数器），却又回不到自己，说明点在水母触手上；
@@ -57,7 +51,7 @@ void mst(int u)
                 if(!tag[i] && i!=u)
                     ans+=w[i];
             }
-            return;
+            return ans;
         }
         for(int i=1;i<=n;++i)
             vis[i]=0;
@@ -68,7 +62,8 @@ void mst(int u)
             j=pre[j];
             vis[j]=tag[j]=1; //vis标记当前环（每次重置为0），tag标记所有环
         }while(j!=t);
-        tag[t]=0;
+        tag[t]=0; //我们把环缩至一个代表点，即t，记得取消它的tag标记
+        //把环上的边关系转移到t上
         for(int k=1;k<=n;++k)//环外点k
         {
             if(tag[k] || vis[k]) continue;
@@ -85,25 +80,4 @@ void mst(int u)
         }
     }
 }
-int main()
-{
-    while(cin>>n>>m)
-    {
-        for(int i=1;i<=n;++i)
-            scanf("%lld%lld",&pos[i].x,&pos[i].y);
-        for(int i=1;i<=n;++i)
-            for(int j=1;j<=n;++j)
-                G[i][j]=inf;
-        for(int i=1;i<=m;++i)
-        {
-            int a,b;
-            scanf("%d%d",&a,&b);
-            G[a][b]=sqrt((pos[a].x-pos[b].x)*(pos[a].x-pos[b].x)+(pos[a].y-pos[b].y)*(pos[a].y-pos[b].y)); //这里的边权为两点距离
-        }
-        mst(1);
-        if(ans==-1)
-            printf("poor snoopy\n");
-        else
-            printf("%.2lf\n",ans);
-    }
-}
+
