@@ -12,7 +12,7 @@ struct PAM {
         // len：回文串长度；fail：失配指针；nxt[]子节点指针
         int len, fail;
         int nxt[MAX_M];
-    } T[MAX_N * MAX_M];
+    } T[MAX_N];
     // 构造函数
     PAM(): top(0) {}
     // 新建节点
@@ -42,7 +42,7 @@ struct PAM {
             if (!T[now].nxt[x]) {
                 // 扩展回文串长度
                 tmp = newNode(T[now].len + 2);
-                T[tmp].fail = T[getFail(s, i, now)].nxt[x];
+                T[tmp].fail = T[getFail(s, i, T[now].fail)].nxt[x];
                 T[now].nxt[x] = tmp;
             }
             lst = T[now].nxt[x];
