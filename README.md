@@ -45,6 +45,7 @@
 ### 数学（Math）
 |文件名|中文名称|
 |:----|:----|
+|[Auto_Modulo.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/Auto_Modulo.cpp)|自取模整数|
 |[FFT.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/FFT.cpp)|快速傅里叶变换|
 |[Quick_Power.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/Quick_Power.cpp)|快速幂|
 ### 杂项（Misc）
