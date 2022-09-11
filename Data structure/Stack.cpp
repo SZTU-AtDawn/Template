@@ -9,21 +9,21 @@ int stk[MAX_N];
 
 // 清空
 inline void clear() {
-	top = 0;
+    top = 0;
 }
 // 入栈
 inline void push(int x) {
-	stk[top++] = x;
+    stk[top++] = x;
 }
 // 出栈
 inline int pop() {
-	return stk[--top];
+    return stk[--top];
 }
 // 检测空栈
 inline bool isEmpty() {
-	return !top;
+    return !top;
 }
 // 检测满栈
 inline bool isFull() {
-	return top >= MAX_N;
+    return top >= MAX_N;
 }
