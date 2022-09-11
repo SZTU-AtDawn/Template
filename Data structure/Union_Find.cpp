@@ -13,18 +13,18 @@ int fa[MAX_N + 5];
 
 // 初始化
 int init(int n) {
-	for (int i = 1; i <= n; ++i)
-		fa[i] = i;
+    for (int i = 1; i <= n; ++i)
+        fa[i] = i;
 }
 // 路径压缩查找父亲 O(log*(n)) = O(1)
 inline int find(int x) {
-	return fa[x] == x ? x : (fa[x] = find(fa[x]));
+    return fa[x] == x ? x : (fa[x] = find(fa[x]));
 }
 // 检查父亲是否相同
 inline bool check(int x, int y) {
-	return find(x) == find(y);
+    return find(x) == find(y);
 }
 // 合并
 inline void merge(int x, int y) {
-	fa[find(y)] = find(x);
+    fa[find(y)] = find(x);
 }
