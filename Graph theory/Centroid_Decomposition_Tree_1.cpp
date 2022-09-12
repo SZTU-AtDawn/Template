@@ -1,3 +1,4 @@
+//动态点分治  第一类问题
 #include<bits/stdc++.h> //洛谷-【模板】点分树（在线查询与指定树上节点的距离小于k的点权总和）
 using namespace std;
 const int maxn=1e5+5;
