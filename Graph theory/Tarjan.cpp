@@ -1,4 +1,5 @@
-// Tarjan算法，用来解决有向图强连通分量、无向图双联通分量、无向图割点与桥、离线LCA问题等
+// Tarjan算法
+// 用来解决有向图强连通分量、无向图双联通分量、无向图割点与桥、离线LCA问题等
 // Author：SNRainiar, from SZTU_AtDawn
 
 // 图结构
