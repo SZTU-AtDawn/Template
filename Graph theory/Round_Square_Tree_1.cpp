@@ -1,3 +1,4 @@
+//基于仙人掌图的普通圆方树
 #include<bits/stdc++.h> //求仙人掌上的两点最短路
 using namespace std;
 const int maxn=1e4+5,inf=1e9,N=2*maxn,mod=998244353;
