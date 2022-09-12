@@ -1,8 +1,4 @@
-#include<bits/stdc++.h> //边双连通分量缩点
-using namespace std;
-const int maxn=1e5+5,M=4e5+5;
-const double inf=1061109567;
-const double eps=1e-4;
+//边双连通分量缩点
 //链式前向星存原图，邻接表存缩点图
 vector<int> G[maxn];
 int to[M],hd[maxn],nt[M],e;
@@ -59,7 +55,7 @@ void dfs(int x,int f,int d)//初始化fa和dt数组
 int main()
 {
     cin.sync_with_stdio(false);
-    int n,m,Q,C=0;
+    int n,m;
     while(cin>>n>>m)
     {
         if(n==0 && m==0) return 0;
@@ -92,5 +88,4 @@ int main()
             }
         }
         dfs(1,0,1); 
-        //...
 }
