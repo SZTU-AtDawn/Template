@@ -1,3 +1,5 @@
+// 树上启发式合并
+
 void dfs0( int u, int fa ) { //遍历整个树，找每个点的重儿子
 	siz[u] = 1;
 	for( int v : G[u]) {
