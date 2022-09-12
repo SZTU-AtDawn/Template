@@ -1,3 +1,4 @@
+// LCA
 //O(1)求LCA——欧拉环游序+ST表
 int dfn[maxn],sa[2*maxn],st[22][maxn*2],bin[32],tim;
 void dfs(int x,int f,int d)
