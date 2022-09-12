@@ -1,100 +1,60 @@
-#include<bits/stdc++.h> //求仙人掌的直径
+//求仙人掌的直径
+#include <bits/stdc++.h>
 using namespace std;
-const int maxn=5e4+5,inf=0x3f3f3f3f;
-int dfn[maxn],low[maxn],tim;
-int fa[maxn],dep[maxn];
-int dt[maxn];//除了环根外，不经过本环的最远叶深度
-struct dat{
-    int dis,val;
-}q[2*maxn]; //注意由于断环为链，长度应翻倍
-int a,b;
-int ans;
-vector<int> G[maxn];
-void dfs(int x,int f,int d)
+const int mx = 1e5 + 10;
+int n,m,ans;
+vector <int> g[mx];
+int dp[mx<<1],dfn[mx],id[mx],sum[mx<<1];
+int fa[mx],siz,st[mx],last,q[mx<<1];
+void Loop(int u,int v)
 {
-    dfn[x]=low[x]=++tim;
-    dep[x]=d;
-    fa[x]=f;
-    for(int i:G[x])
-    {
-        if(!dfn[i])
-        {
-            dfs(i,x,d+1);
-            if(low[i]>dfn[x])
-            {
-                ans=max(ans,dt[x]+dt[i]+1);
-                dt[x]=max(dt[x],dt[i]+1);
-            }
-            low[x]=min(low[x],low[i]);
+    last = 0;
+    for(int i=v;i!=fa[u];i=fa[i]) st[last++] = dp[i];
+    for(int i=last;i<2*last;i++) st[i] = st[i-last];
+    int lim = last>>1;
+    int l = 0,r = 0;
+    for(int i=0;i<2*last;i++){
+        if(l!=r) ans = max(ans,st[i]+i+st[q[l]]-q[l]);
+        while(l!=r&&st[i]-i>=st[q[r-1]]-q[r-1]) r--;
+        q[r++] = i;
+        while(l!=r&&i>=lim+q[l]) l++;  
+    }
+    for(int i=0;i<last;i++) dp[u] = max(dp[u],st[i]+min(i+1,last-i-1));
+}
+void tarjan(int u)
+{
+    dfn[u] = id[u] = ++siz;
+    for(int v:g[u]){
+        if(v==fa[u]) continue;
+        if(!dfn[v]){
+            fa[v] = u;
+            tarjan(v);
+            id[u] = min(id[u],id[v]);
+        }else id[u] = min(id[u],dfn[v]);
+        if(id[v]>dfn[u]){
+            ans = max(ans,dp[u]+dp[v]+1);
+            dp[u] = max(dp[u],dp[v]+1);
         }
-        else if(i!=f)
-        {
-            low[x]=min(low[x],dfn[i]);
-            if(dfn[i]>dfn[x]) //如果是一条向下边，那么说明当前x是一个环根
-            {
-                int s=dep[i]-dep[x]+1;
-                int bs=s/2;
-                int y=i;
-                vector<int> v;
-                while(y!=x)
-                {
-                    v.push_back(y);
-                    y=fa[y];
-                }
-                v.push_back(x);
-                int m=v.size();
-                for(int i=0;i<m;++i) //断环为链，复制新链续尾，容器长度翻倍
-                    v.push_back(v[i]);
-                m=v.size();
-                a=1,b=0;//重置单调栈左右端点
-                q[a]=q[b]={0,0};
-                int tem=dt[x]; dt[x]=0;//暂时令自己为0
-                for(int j=0;j<m;++j) //执行单调栈
-                {
-                    int t=v[j];
-                    while(j-q[a].dis>bs && a<=b)
-                        ++a;
-                    if(a<=b)
-                        ans=max(ans,dt[t]+j+q[a].val);
-                    while(q[b].val<=dt[t]-j && a<=b)
-                        --b;
-                    q[++b]={j,dt[t]-j};
-                }
-                dt[x]=tem;
-                y=i;
-                int td=0;
-                while(y!=x)
-                {
-                    int c=dep[y]-dep[x];
-                    if(2*c>s)
-                        c=s-c;
-                    td=max(td,c+dt[y]);
-                    y=fa[y];
-                }
-                ans=max(ans,dt[x]+td);
-                dt[x]=max(dt[x],td);
-            }
-        }
+    }
+    for(int v:g[u]){
+        if(fa[v]!=u&&dfn[v]>dfn[u])
+        Loop(u,v);
     }
 }
 int main()
 {
-    cin.sync_with_stdio(false);
-    cout.tie(0);
-    int n,m;
-    cin>>n>>m;
-    for(int i=1;i<=m;++i)
-    {
-        int k,x,y;
-        cin>>k>>x;
-        for(int j=1;j<k;++j)
-        {
-            cin>>y;
-            G[x].push_back(y);
-            G[y].push_back(x);
-            x=y;
+    scanf("%d%d",&n,&m);
+    int k,x,y;
+    while(m--){
+        scanf("%d%d",&k,&x);
+        while(--k){
+            scanf("%d",&y);
+            g[x].push_back(y);
+            g[y].push_back(x);
+            x = y;
         }
     }
-    dfs(1,0,1);
-    cout<<ans;
-}
+    tarjan(1);
+    printf("%d\n",ans);
+    return 0;
+} 
