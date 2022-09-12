@@ -33,13 +33,18 @@
 ### 图论（Graph theory）
 |文件名|中文名称|
 |:----|:----|
+|[Centroid_Decomposition.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Centroid_Decomposition.cpp)|点分治|
 |[Dijkstra.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dijkstra.cpp)|Dijkstra最短路|
 |[Dijkstra_EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dijkstra_EK.cpp)|基于Dijkstra的最小费用最大流|
 |[Dinic.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dinic.cpp)|Dinic最大流|
+|[Directed_MST.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Directed_MST.cpp)|有向图的最小生成树|
+|[Dsu_on_tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Dsu_on_tree.cpp)|树上启发式合并|
 |[EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/EK.cpp)|EK最大流|
 |[Floyd.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Floyed.cpp)|Floyed最短路|
 |[ISAP.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/ISAP.cpp)|ISAP最大流|
+|[LCA_RMQ.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/LCA_RMQ.cpp)|基于欧拉环游序和ST表的最近公共祖先|
 |[Link_Cut_Tree.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Link_Cut_Tree.cpp)|动态树|
+|[Revocable_DSU.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Revocable_DSU.cpp)|可撤销并查集|
 |[SPFA_EK.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/SPFA_EK.cpp)|基于SPFA的最小费用最大流|
 |[Tarjan.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Graph%20theory/Tarjan.cpp)|Tarjan算法|
 ### 数学（Math）
@@ -47,6 +52,8 @@
 |:----|:----|
 |[Auto_Modulo.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/Auto_Modulo.cpp)|自取模整数|
 |[FFT.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/FFT.cpp)|快速傅里叶变换|
+|[MTT.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/FFT.cpp)|任意模数快速数论变换|
+|[NTT.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/FFT.cpp)|固定模数快速数论变换|
 |[Quick_Power.cpp](https://github.com/SZTU-AtDawn/Template/blob/main/Math/Quick_Power.cpp)|快速幂|
 ### 杂项（Misc）
 |文件名|中文名称|
