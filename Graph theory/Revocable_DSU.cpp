@@ -1,4 +1,6 @@
-struct DSU{ //可撤销并查集
+//可撤销并查集
+
+struct DSU{ 
     int fa[N],rk[N];//rk[x]表示x的秩
     struct edge{
         int x,y,w; //w记录秩是否改变
