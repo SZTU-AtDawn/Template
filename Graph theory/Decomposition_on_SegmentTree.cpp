@@ -1,3 +1,5 @@
+// 线段树分治
+
 #include<bits/stdc++.h> //P5787 线段树分治（删边与加边，并询问当前图是否为二分图，可离线）
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
